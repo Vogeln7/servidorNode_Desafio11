@@ -1,7 +1,7 @@
 //IMPORTACION
 const express=require('express');
 let producto=require('./productos');
-const pug=require('pug');
+const ejs=require('ejs')
 
 //INSTANCIAS
 const app=express();
@@ -10,8 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(express.static('./public'));
-app.set('views','./views')
-app.set('view engine','pug')
+app.set('view engine','ejs')
 
 const routerApp=express.Router();
 const PORT=8080;
